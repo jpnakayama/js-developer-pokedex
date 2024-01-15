@@ -86,11 +86,29 @@
     border-radius: 1rem;
 }
 
-.pokemon .number {
+.pokemon .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
     color: #000;
     opacity: .3;
-    text-align: right;
+
+    margin-bottom: .4rem;
+}
+
+.pokemon .number {
     font-size: .625rem;
+}
+
+.pokemon .details-button {
+    all: unset;
+    
+    width: fit-content;
+    border: none;
+
+    cursor: pointer;
+    font-size: 1.2rem;
 }
 
 .pokemon .name {
@@ -144,6 +162,86 @@
     background-color: #6c79db;
     border: none;
     border-radius: 1rem;
+}
+
+.pokemon-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 400px;
+    height: 350px;
+    padding: 20px;
+
+    border-radius: 20px;
+    z-index: 999;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.pokemon-popup .popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 35%;
+
+    padding: 10px;
+}
+
+.pokemon-popup .popup-header .popup-close-button {
+    all: unset;
+    
+    cursor: pointer;
+    color: #000;
+    opacity: .3;    
+}
+
+.popup-header-text{
+    font-size: 1.7rem;
+    opacity: .7;
+}
+
+.popup-header-text .name{
+    text-transform: capitalize;
+
+    position: relative;
+    top: -30px;
+}
+
+.pokemon-popup .popup-body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 10px 20px 0 20px;
+}
+
+.pokemon-popup .popup-body .popup-body-infos {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.pokemon-popup .popup-body .popup-body-infos .popup-details{
+    opacity: .7;
+}
+
+.pokemon-popup .popup-body .popup-img {
+    min-width: 30%;
+    min-height: 30%;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Cor cinza com opacidade */
+    z-index: 998; /* Coloque a camada abaixo do popup (z-index menor) */
+    display: none; /* Inicialmente oculta */
 }
 
 @media screen and (min-width: 380px) {
